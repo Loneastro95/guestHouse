@@ -8,7 +8,7 @@ import Gal from "../assests/Rooms&Suits.png";
 
 const Rooms = () => {
   return (
-    <div className="MainRoomContainer">
+    <div className="MainRoomContainer" id="rooms">
         <Container className="roomContainer">
           <h1>Rooms & Suits</h1>
           <div className="line2"></div>

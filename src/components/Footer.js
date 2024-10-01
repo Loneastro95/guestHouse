@@ -23,7 +23,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="footerContainer">
+    <div className="footerContainer" id="contact">
       
       <Container className="footerCard">
         <h1 className="footerHeader">GuestHouse</h1>

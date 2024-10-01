@@ -29,7 +29,7 @@ function Home() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Container className="contentContainer">
+      <Container className="contentContainer" id="home">
         <h1 className="contentText">More Than a Stay, It's an Experience.</h1>
         <button className="reserveBtn">Reserve Now!</button>
       </Container>
