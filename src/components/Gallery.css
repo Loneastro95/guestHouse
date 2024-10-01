@@ -1,0 +1,36 @@
+.galleryContainer{
+    min-height: 50vh;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2rem;
+    
+}
+
+.galleryHeader{
+    text-align: center;
+    font-size: 3rem;
+    color: #fff;
+
+}
+.line{
+    height: 3px;
+    width: 50px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.showBtn{
+    width: 12rem;
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 10px;
+    font-weight: bold;
+    margin: 2rem auto; 
+}

@@ -1,0 +1,106 @@
+.navbar-expand-lg .navbar-collapse {
+    justify-content: flex-end;
+}
+
+.mainContainer {
+    background: url(../assests/homeBG.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.mainContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+}
+
+.mainContainer > * {
+    position: relative;
+    z-index: 2;
+}
+
+.navText {
+    color: white;
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+.contentContainer {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    color: white;
+   
+}
+
+.contentText {
+    width: 35%;
+    font-size: 3rem;
+}
+
+.reserveBtn {
+    width: 12rem;
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 10px;
+    font-weight: bold;
+    
+}
+
+
+@media (max-width: 768px) {
+    .contentText {
+        width: 80%; 
+        font-size: 2.5rem; 
+        text-align: center;
+    }
+
+    .reserveBtn {
+        width: 10rem; 
+        min-height: 3.5rem;
+    }
+
+    .navText {
+        font-size: 1rem; 
+    }
+    .link{
+        text-align: end;
+        padding-right: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contentText {
+        width: 100%;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .reserveBtn {
+        width: 100%;
+        min-height: 3rem; 
+        font-size: 1rem;
+    }
+
+    .navText {
+        font-size: 1rem; 
+    }
+    .link{
+        text-align: end;
+        padding-right: 1rem;
+    }
+}
