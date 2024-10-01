@@ -1,0 +1,152 @@
+.MainRoomContainer{
+    width: 100%;
+    background-color: whitesmoke;
+    padding: 3rem;
+}
+
+.roomContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: whitesmoke;
+}
+.line2{
+    width: 10%;
+    min-height: 3px;
+    background-color: black;
+    margin-bottom: 3rem;
+}
+.roomCard{
+    display: flex;
+    justify-content: center;
+    margin: 2px 0;
+
+}
+.reverse{
+    flex-wrap: wrap-reverse;
+}
+.cardInfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 2rem 0;
+}
+.additionalInfo{
+    display: flex;
+    margin: 0 auto;
+    gap: 1rem;
+}
+.roomImg{
+    aspect-ratio: 1/.5;
+}
+.roomName{
+    text-align: center;
+}
+.roomPara{
+    width: 70%;
+}
+.addText{
+    font-weight: bold;
+}
+.price {
+    align-self: flex-start;
+    margin-left: 15%;
+    margin-bottom: 1rem;
+    font-weight: 200;
+    font-size: 24px;
+}
+
+.roomDetailBtn{
+    align-self: flex-start;
+    margin-left: 15%;
+    width: 12rem;
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    border: 2px solid black;
+    background-color: transparent;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.bold{
+    font-weight: bold;
+    font-size: 26px;
+}
+
+
+
+
+
+@media (max-width: 1024px) {
+    .roomCard {
+        flex-direction: column; /* Stack content vertically */
+    }
+
+    .cardInfo {
+        width: 70%; /* Increase card width for medium-sized screens */
+    }
+
+    .roomPara {
+        width: 90%; /* Adjust text width for readability */
+    }
+}
+
+@media (max-width: 768px) {
+    .roomCard {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cardInfo {
+        width: 90%; /* Make cards full-width */
+    }
+
+    .roomPara {
+        width: 100%; /* Allow full-width text */
+    }
+
+    .roomDetailBtn {
+        margin-left: 0;
+        width: 100%; /* Button becomes full-width */
+        width: 80%;
+        margin: 0 auto;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .MainRoomContainer {
+        padding: 1.5rem; /* Reduce padding on smaller screens */
+    }
+
+    .cardInfo {
+        width: 100%; /* Full-width cards on small screens */
+    }
+
+    .roomImg {
+        width: 100%; /* Ensure image scales properly */
+    }
+
+    .roomPara {
+        font-size: 1rem;
+        width: 80%;
+    }
+
+    .roomDetailBtn {
+        min-height: 3rem;
+        font-size: 1rem;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .reverse{
+        flex-wrap: wrap-reverse;
+    }
+}

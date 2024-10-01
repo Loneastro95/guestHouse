@@ -1,0 +1,108 @@
+.footerContainer {
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+    padding: 2rem;
+}
+
+.footerCard {
+    width: 100%;
+    padding: 1rem;
+}
+
+.footerHeader {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.footerInfo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.card-inner {
+    flex: 1 1;
+    min-width: 200px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.homeAbout {
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.line3 {
+    width: 50%;
+    height: 2px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.map {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 768px) {
+    .footerHeader {
+        font-size: 1.75rem;
+    }
+
+    .footerInfo {
+        font-size: 1.25rem;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .map {
+        width: 100%;
+        height: 200px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footerHeader {
+        font-size: 1.75rem;
+    }
+
+    .footerInfo {
+        font-size: 1.2rem;
+    }
+
+    .map {
+        height: 150px;
+    }
+
+    .line3 {
+        width: 80%;
+    }
+}
