@@ -70,7 +70,7 @@ const RoomDetails = () => {
             <h2 className="detailPrice">
               <span className="bold">R 1500</span> per night
             </h2>
-            <div className="grayContainer"></div>
+            <div className="grayContainer mb-2"></div>
           </div>
 
           <div className="checkoutContainer">
