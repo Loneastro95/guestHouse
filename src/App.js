@@ -1,19 +1,17 @@
 import './App.css';
-import Home from './components/Home';
-import About from './components/About';
-import Gallery from './components/Gallery';
-import Rooms from './components/Rooms';
-import Footer from './components/Footer';
+import { Route, Router, Routes } from 'react-router-dom';
+import ShowAll from './components/ShowAll';
+import RoomDetails from './components/RoomDetails';
 
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <About/>
-      <Gallery/>
-      <Rooms/>
-      <Footer/>
+      <Routes>
+        <Route path="/" element={<ShowAll />} />
+        <Route path='/roomdetail' element={<RoomDetails/>} />
+      </Routes>
+      
     </div>
   );
 }

@@ -147,6 +147,7 @@
     }
 
     .reverse{
-        flex-wrap: wrap-reverse;
+        display: flex;
+        flex-direction: column-reverse;
     }
 }

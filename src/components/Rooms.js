@@ -5,8 +5,14 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Card from "react-bootstrap/Card";
 import "./Room.css";
 import Gal from "../assests/Rooms&Suits.png";
+import { useNavigate } from "react-router-dom";
 
 const Rooms = () => {
+  const navigate = useNavigate();
+
+  const handleRoomNav = () =>{
+    navigate("/roomdetail");
+  }
   return (
     <div className="MainRoomContainer" id="rooms">
         <Container className="roomContainer">
@@ -30,7 +36,7 @@ const Rooms = () => {
               <h2 className="price">
                 <span className="bold">R 1500</span> per night
               </h2>
-              <button className="roomDetailBtn">Room Details</button>
+              <button className="roomDetailBtn" onClick={handleRoomNav}>Room Details</button>
             </div>
           </div>
           <div className="roomCard reverse">
@@ -51,7 +57,7 @@ const Rooms = () => {
               <h2 className="price">
                 <span className="bold">R 1500</span> per night
               </h2>
-              <button className="roomDetailBtn">Room Details</button>
+              <button className="roomDetailBtn" onClick={handleRoomNav}>Room Details</button>
             </div>
             <img src={Gal} alt="room image" className="roomImg" />
           </div>
@@ -74,7 +80,7 @@ const Rooms = () => {
               <h2 className="price">
                 <span className="bold">R 1500</span> per night
               </h2>
-              <button className="roomDetailBtn">Room Details</button>
+              <button className="roomDetailBtn" onClick={handleRoomNav}>Room Details</button>
             </div>
           </div>
 
@@ -95,7 +101,7 @@ const Rooms = () => {
               <h2 className="price">
                 <span className="bold">R 1500</span> per night
               </h2>
-              <button className="roomDetailBtn">Room Details</button>
+              <button className="roomDetailBtn" onClick={handleRoomNav}>Room Details</button>
             </div>
             <img src={Gal} alt="room image" className="roomImg" />
           </div>
