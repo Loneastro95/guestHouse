@@ -1,21 +1,47 @@
 import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Card from "react-bootstrap/Card";
-import DatePicker from "react-datepicker";
 import "./RoomDetails.css";
 import Img1 from "../assests/Gallery1.png";
 import Img2 from "../assests/Gallery2.png";
+import emailjs from "emailjs-com";
 
 const RoomDetails = () => {
   const [checkinDate, setCheckinDate] = useState("");
   const [checkoutDate, setCheckoutDate] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  // Function to send email using EmailJS
+  const sendReservation = (e) => {
+    e.preventDefault();
+
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      check_in: checkinDate,
+      check_out: checkoutDate,
+    };
+
+    emailjs
+      .send(
+        "service_xxfd13c", // Service ID
+        "template_qwffkwf", // Template ID
+        templateParams,
+        "Gy8lOEiYSz7k8wPUQ" // User ID
+      )
+      .then(
+        (result) => {
+          console.log("Email successfully sent!");
+          window.location.reload();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   const handleDateChange = (e) => {
     const { name, value } = e.target;
-
     if (name === "checkin") {
       setCheckinDate(value);
     } else if (name === "checkout") {
@@ -23,15 +49,17 @@ const RoomDetails = () => {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
     if (new Date(checkoutDate) <= new Date(checkinDate)) {
       alert("Check-out date must be after check-in date.");
     } else {
+      sendReservation(e); // Send email on successful reservation
       const checkin = new Date(checkinDate);
       const checkout = new Date(checkoutDate);
       const diffTime = Math.abs(checkout - checkin);
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); // Convert time difference to days
-
       alert(`You will stay for ${diffDays} days.`);
     }
   };
@@ -54,6 +82,7 @@ const RoomDetails = () => {
             </div>
           </div>
         </div>
+
         <div className="detailInfoContainer">
           <div className="detailInfo">
             <div className="additionalInfo">
@@ -74,7 +103,28 @@ const RoomDetails = () => {
           </div>
 
           <div className="checkoutContainer">
-            <div className="dateContainer">
+            <form onSubmit={handleSubmit}>
+              <div className="inputGroup">
+                <label>Name</label>
+                <input
+                  type="text"
+                  className="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="inputGroup">
+                <label>Email</label>
+                <input
+                  type="email"
+                  className="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+
               <div className="dateContainer">
                 <div className="inputGroup">
                   <label htmlFor="checkin">Check-in</label>
@@ -85,6 +135,7 @@ const RoomDetails = () => {
                     id="checkin"
                     value={checkinDate}
                     onChange={handleDateChange}
+                    required
                   />
                 </div>
                 <div className="inputGroup">
@@ -96,13 +147,15 @@ const RoomDetails = () => {
                     id="checkout"
                     value={checkoutDate}
                     onChange={handleDateChange}
+                    required
                   />
                 </div>
               </div>
-            </div>
-            <button className="checkoutBtn" onClick={handleSubmit}>
-              Reserve Now!
-            </button>
+
+              <button className="checkoutBtn" type="submit">
+                Reserve Now!
+              </button>
+            </form>
           </div>
         </div>
       </Container>

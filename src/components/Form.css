@@ -1,0 +1,12 @@
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    width: 40%;
+    padding: 1rem 2rem;
+}
