@@ -72,7 +72,7 @@ const RoomDetails = () => {
   return (
     <div className="detailsContainer">
       <Container>
-        <h1 className="roomDetailName">Deluxe Room</h1>
+        <h1 className="roomDetailName">{data.name}</h1>
         <div className="imgContainer">
           <img src={Img1} alt="room detail image 1" />
 
@@ -91,9 +91,9 @@ const RoomDetails = () => {
         <div className="detailInfoContainer">
           <div className="detailInfo">
             <div className="additionalInfo">
-              <p className="addText">1 bed</p>
-              <p className="addText">2 people</p>
-              <p className="addText">1 room size</p>
+              <p className="addText">{data.details.bed}</p>
+              <p className="addText">{data.details.people}</p>
+              <p className="addText">{data.details.size}</p>
             </div>
             <p className="detailPara">
               {data.description}
