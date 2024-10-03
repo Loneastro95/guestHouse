@@ -24,13 +24,15 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div className="footerContainer" id="contact">
-      
       <Container className="footerCard">
         <h1 className="footerHeader">GuestHouse</h1>
         <div className="card-container row flex-wrap">
           <div className="col-sm-3 card-inner">
             <h2 className="footerInfo">Address</h2>
-            <p>Kimberley, 8300</p>
+            <p>
+              24 Limpopo St, Riviera, Kimberley, 8301, South Africa Kimberley
+              Northern Cape 8301
+            </p>
           </div>
           <div className="col-sm-3 card-inner homeAbout">
             <h2 className="footerInfo">Home</h2>

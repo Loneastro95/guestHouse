@@ -25,6 +25,7 @@ const RoomDetails = () => {
       from_email: email,
       check_in: checkinDate,
       check_out: checkoutDate,
+      room_name: data.name,
     };
 
     emailjs
