@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import "./RoomDetails.css";
 import Img1 from "../assests/Gallery1.png";
 import Img2 from "../assests/Gallery2.png";
@@ -10,6 +11,10 @@ const RoomDetails = () => {
   const [checkoutDate, setCheckoutDate] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+
+  const location = useLocation();
+  const data = location.state;
+  console.log(data);
 
   // Function to send email using EmailJS
   const sendReservation = (e) => {
@@ -91,38 +96,43 @@ const RoomDetails = () => {
               <p className="addText">1 room size</p>
             </div>
             <p className="detailPara">
-              Experience the ultimate luxury in our spacious Presidential Suite,
-              featuring elegant decor, a king-size bed, private lounge area, and
-              breathtaking views. Perfect for those seeking sophistication and
-              comfort.
+              {data.description}
             </p>
             <h2 className="detailPrice">
-              <span className="bold">R 1500</span> per night
+              <span className="bold">R {data.price}</span> per night
             </h2>
             <div className="grayContainer mb-2"></div>
           </div>
 
           <div className="checkoutContainer">
             <form onSubmit={handleSubmit}>
-              <div className="inputGroup">
-                <label>Name</label>
-                <input
-                  type="text"
-                  className="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="inputGroup">
-                <label>Email</label>
-                <input
-                  type="email"
-                  className="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
+            <div className="dateContainer">
+                <div className="inputGroup">
+                  <label htmlFor="Name">Name</label>
+                  <input
+                    type="text"
+                    className="date"
+                    placeholder="Enter name..."
+                    name="name"
+                    id="name"
+                    value={name}
+                    onChange={((e) => setName(e.target.value))}
+                    required
+                  />
+                </div>
+                <div className="inputGroup">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    className="date"
+                    placeholder="Enter email..."
+                    name="email"
+                    id="email"
+                    value={email}
+                    onChange={((e) =>setEmail(e.target.value))}
+                    required
+                  />
+                </div>
               </div>
 
               <div className="dateContainer">
@@ -152,7 +162,7 @@ const RoomDetails = () => {
                 </div>
               </div>
 
-              <button className="checkoutBtn" type="submit">
+              <button className="checkoutBtn mt-4" type="submit">
                 Reserve Now!
               </button>
             </form>
